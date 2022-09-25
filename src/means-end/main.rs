@@ -62,7 +62,9 @@ async fn handle_connection(mut socket: TcpStream) -> Result<(), MeansEndErr> {
 
 
         match req.query {
-            73 => storage.insert(req.arg1, req.arg2),
+            73 => {
+                storage.insert(req.arg1, req.arg2);
+            },
             81 => {
                 let mut avg = 0;
 
